@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { saveScore, getLeaderboard, getTop3 } from "../lib/supabase";
+import { saveScore, getTop3 } from "../lib/supabase";
 import "../styles/ResultsScreen.css";
 
 function getGrade(pct) {
