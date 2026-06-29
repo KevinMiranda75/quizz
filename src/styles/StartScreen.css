@@ -1,0 +1,204 @@
+.start-wrapper {
+  align-self: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100%;
+  max-width: 480px;
+}
+
+.start-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 20px 60px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e4e7ec;
+}
+
+/* ── HERO ── */
+.start-hero {
+  position: relative;
+  /* CAMBIO: Gradiente de azul a turquesa */
+  background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #22d3ee 100%);
+  padding: 3rem 2rem 2.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-orbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.25;
+  filter: blur(2px);
+}
+
+.orb-1 {
+  width: 220px;
+  height: 220px;
+  background: #a855f7;
+  /* morado brillante */
+  top: -60px;
+  right: -50px;
+}
+
+.orb-2 {
+  width: 150px;
+  height: 150px;
+  background: #06b6d4;
+  /* turquesa */
+  bottom: -40px;
+  left: -30px;
+}
+
+.orb-3 {
+  width: 90px;
+  height: 90px;
+  background: #facc15;
+  /* amarillo más elegante */
+  top: 20px;
+  left: 30px;
+}
+
+.hero-icon {
+  position: relative;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+}
+
+.start-hero h1 {
+  position: relative;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.start-subtitle {
+  position: relative;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.6;
+}
+
+/* ── META CARDS ── */
+.start-meta {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: #f8f9fb;
+  border-bottom: 1px solid #e4e7ec;
+}
+
+.meta-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* CAMBIO: De meta-purple a meta-cyan */
+.meta-cyan {
+  background: #cffafe;
+}
+
+.meta-blue {
+  background: #e0f2fe;
+}
+
+.meta-amber {
+  background: #fef3c7;
+}
+
+.meta-emoji {
+  font-size: 1.2rem;
+  margin-bottom: 0.15rem;
+}
+
+.meta-val {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+}
+
+.meta-lbl {
+  font-size: 0.72rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* ── TOPICS ── */
+.start-topics {
+  padding: 1.25rem 1.5rem 0;
+}
+
+.topics-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: #9ca3af;
+  margin-bottom: 0.6rem;
+}
+
+.topics-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.chip {
+  border-radius: 99px;
+  padding: 0.28rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* ── BUTTON ── */
+.btn-start {
+  display: block;
+  width: calc(100% - 3rem);
+  margin: 1.5rem 1.5rem 0.75rem;
+  padding: 1rem 1.5rem;
+  /* CAMBIO: Gradiente del botón a juego con el hero */
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  /* CAMBIO: Sombra del botón en azul */
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-start:hover {
+  transform: translateY(-2px);
+  /* CAMBIO: Sombra hover en azul */
+  box-shadow: 0 6px 20px rgba(2, 132, 199, 0.5);
+}
+
+.btn-start:active {
+  transform: scale(0.98) translateY(0);
+}
+
+.start-hint {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  padding-bottom: 1.5rem;
+}
