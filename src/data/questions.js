@@ -173,4 +173,64 @@ export const questions = [
     explanation:
       "La masa se mide con una balanza. El dinamómetro mide fuerza y se puede usar para calcular el peso.",
   },
+  {
+    id: 16,
+    question: "¿Qué es el peso de un objeto?",
+    options: [
+      "La cantidad de materia que tiene",
+      "La fuerza con la que la gravedad atrae un cuerpo",
+      "El volumen del objeto",
+      "La energía que contiene",
+    ],
+    correct: 1,
+    explanation:
+      "El peso es la fuerza que ejerce la gravedad sobre un cuerpo y depende de su masa y de la gravedad del lugar.",
+  },
+  {
+    id: 17,
+    question: "¿Cuál de las siguientes afirmaciones es correcta sobre la energía?",
+    options: [
+      "La energía se puede crear de la nada",
+      "La energía solo existe en objetos en movimiento",
+      "La energía puede transformarse de una forma a otra",
+      "La energía desaparece al usarse",
+    ],
+    correct: 2,
+    explanation:
+      "La energía no se crea ni se destruye, solo se transforma de una forma a otra.",
+  },
+  {
+    id: 18,
+    question: "¿Qué relación existe entre masa y energía según la física moderna?",
+    options: [
+      "No tienen relación",
+      "La masa puede transformarse en energía y viceversa",
+      "La energía no depende de la masa",
+      "La masa siempre es mayor que la energía",
+    ],
+    correct: 1,
+    explanation:
+      "Según la teoría de Einstein (E = mc²), la masa y la energía están relacionadas y pueden transformarse entre sí.",
+  },
+  {
+    id: 19,
+    question: "¿Qué instrumento se utiliza para medir el peso?",
+    options: ["Balanza", "Termómetro", "Dinamómetro", "Barómetro"],
+    correct: 2,
+    explanation:
+      "El dinamómetro se utiliza para medir fuerzas, incluido el peso de un objeto.",
+  },
+  {
+    id: 20,
+    question: "¿Qué ocurre con la energía en una lámpara encendida?",
+    options: [
+      "Se destruye",
+      "Se transforma en luz y calor",
+      "Se convierte en masa",
+      "Desaparece al instante",
+    ],
+    correct: 1,
+    explanation:
+      "La energía eléctrica se transforma en energía luminosa y térmica en una lámpara encendida.",
+  },
 ];

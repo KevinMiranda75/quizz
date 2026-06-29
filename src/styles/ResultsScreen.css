@@ -153,3 +153,131 @@
   background: var(--accent-light);
   color: var(--accent);
 }
+
+/* ── PLAYER NAME ── */
+.player-name {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0.2rem;
+}
+.player-name strong { color: #111827; }
+
+/* ── LEADERBOARD ── */
+.lb-section {
+  margin-bottom: 1.25rem;
+}
+
+.lb-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  margin-bottom: 0.75rem;
+}
+
+.db-error {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.83rem;
+  color: #92400e;
+  line-height: 1.5;
+}
+.db-error code {
+  background: #fde68a;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 0.78rem;
+}
+
+.lb-loading {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  padding: 0.75rem 0;
+}
+
+.lb-spinner {
+  width: 16px; height: 16px;
+  border: 2px solid #e4e7ec;
+  border-top-color: #7c3aed;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.lb-empty {
+  font-size: 0.85rem;
+  color: #9ca3af;
+  padding: 0.5rem 0;
+}
+
+.lb-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #f3f4f6;
+  background: #ffffff;
+  font-size: 0.88rem;
+  transition: background 0.1s;
+}
+
+.lb-row:last-child { border-bottom: none; }
+
+.lb-row-me {
+  background: #ede9fe;
+}
+
+.lb-rank {
+  min-width: 28px;
+  font-size: 1rem;
+  text-align: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: #9ca3af;
+}
+
+.lb-name {
+  flex: 1;
+  font-weight: 600;
+  color: #111827;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lb-score {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.lb-pts {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+.lb-pct-badge {
+  border-radius: 99px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}

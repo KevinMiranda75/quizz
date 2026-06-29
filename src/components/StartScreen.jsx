@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { LeaderboardList } from './LeaderboardList';
 import "../styles/StartScreen.css";
 
 const CHIPS = [
@@ -10,6 +11,27 @@ const CHIPS = [
 ];
 
 export default function StartScreen({ onStart, totalQuestions }) {
+  const [name, setName] = useState("");
+  const [error, setError] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+  const handleStart = () => {
+    const trimmed = name.trim();
+    if (!trimmed) {
+      setError("Ingresa tu nombre para continuar.");
+      return;
+    }
+    if (trimmed.length < 2) {
+      setError("El nombre debe tener al menos 2 caracteres.");
+      return;
+    }
+    onStart(trimmed);
+  };
+
+  const handleKey = (e) => {
+    if (e.key === "Enter") handleStart();
+  };
+
   return (
     <div className="start-wrapper">
       <div className="start-card">
@@ -49,22 +71,50 @@ export default function StartScreen({ onStart, totalQuestions }) {
           <p className="topics-label">Temas cubiertos</p>
           <div className="topics-chips">
             {CHIPS.map((c) => (
-              <span
-                key={c.label}
-                className="chip"
-                style={{ color: c.color, background: c.bg }}
-              >
+              <span key={c.label} className="chip" style={{ color: c.color, background: c.bg }}>
                 {c.label}
               </span>
             ))}
           </div>
         </div>
 
-        <button className="btn-start" onClick={onStart}>
+        <div className="name-section pt-2">
+          <label className="name-label" htmlFor="player-name">
+            ¿Cómo te llamas?
+          </label>
+          <input
+            id="player-name"
+            className={`name-input ${error ? "name-input-error" : ""}`}
+            type="text"
+            placeholder="Tu nombre aquí..."
+            value={name}
+            onChange={(e) => { setName(e.target.value); setError(""); }}
+            onKeyDown={handleKey}
+            maxLength={30}
+            autoComplete="off"
+          />
+          {error && <p className="name-error">{error}</p>}
+        </div>
+
+        <button className="btn-start" onClick={handleStart}>
           ¡Comenzar quiz! →
+        </button>
+        {/* Botón para abrir el ranking */}
+        <button className="btn-rank-link" onClick={() => setShowModal(true)}>
+          🏆 Ver Ranking Completo
         </button>
         <p className="start-hint">Sin límite de tiempo · Puedes repetirlo</p>
       </div>
+
+      {/* El Modal */}
+      {showModal && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+            <h3 style={{ marginTop: 0 }}>🏆 Ranking General</h3>
+            <LeaderboardList onClose={() => setShowModal(false)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -9,11 +9,13 @@ const SCREENS = { START: "start", QUIZ: "quiz", RESULTS: "results" };
 
 export default function App() {
   const [screen, setScreen] = useState(SCREENS.START);
+  const [playerName, setPlayerName] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [history, setHistory] = useState([]);
 
-  const handleStart = () => {
+  const handleStart = (name) => {
+    setPlayerName(name);
     setScreen(SCREENS.QUIZ);
     setCurrentIndex(0);
     setScore(0);
@@ -58,6 +60,7 @@ export default function App() {
       )}
       {screen === SCREENS.RESULTS && (
         <ResultsScreen
+          name={playerName}
           score={score}
           total={questions.length}
           history={history}
